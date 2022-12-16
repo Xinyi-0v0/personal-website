@@ -1,0 +1,126 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.page-title{
+    align-self: center;
+}
+
+.form-label {
+    padding-left: 1rem;
+}
+
+.contact-modal {
+    width: 30rem;
+    border-radius: 2rem;
+    border-color: #322f2c;
+}
+
+.modal-light {
+    background-color: #F8F4F0;
+}
+
+.modal-dark {
+    background-color: #B8B4B0;
+}
+
+.meassage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+    row-gap: 1rem;
+
+    padding: 1rem 1rem;
+}
+
+.message-content {
+    grid-column: span 2;
+}
+
+.message-name,
+.message-email,
+.occupation,
+.occupation-detail,
+.message-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+
+}
+
+input,
+select,
+textarea {
+    border: 1px solid;
+    padding: 0.5rem;
+    background-color: inherit;
+}
+
+.meassage input[type=text],
+textarea[type=text] {
+    background-color: inherit;
+}
+
+#message {
+    height: 6rem;
+}
+
+.modal-submit,
+.modal-cancel {
+    justify-self: center;
+    align-items: center;
+
+    border: none;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.modal-submit {
+    background-color: #ff8962;
+}
+
+.modal-cancel {
+    background-color: inherit;
+    text-decoration: underline;
+}
+
+
+.contact-modal::backdrop {
+    background-color: black;
+    opacity: 0.5;
+}
+
+.reply{
+    align-self: center;
+
+    display: flex;
+    flex-direction: column;
+    
+    width: 70%;
+}
+
+.reply-name {
+    margin-bottom: 0;
+}
+
+
+@media screen and (max-width: 35rem) {
+    .contact-modal {
+        width: 80%;
+    }
+
+    .meassage {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .modal-submit,
+    .modal-cancel {
+        align-self: center;
+        margin-top: 0;
+    }
+
+
+}

@@ -1,0 +1,10 @@
+.skiplink {
+    position: absolute;
+    top: -100%;
+  }
+  
+  .skiplink:focus {
+    top:inherit;
+    left: 50%
+  }
+  

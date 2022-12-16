@@ -1,0 +1,69 @@
+.skillsets{
+    max-width: 40rem;
+    padding: 0 1rem;
+    margin: 0 1rem;
+}
+
+.skillsets button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 1rem;
+   
+}
+
+.skillSet-light button{
+    background-color: #F0ECE8;
+}
+
+.skillSet-dark button{
+    background-color: #6A6663;
+    color: whitesmoke;
+}
+
+.clicked {
+    height: 2.5rem;
+    background-color: inherit; 
+} 
+
+.skillSet-light .clicked {
+    background-color: #ff8962;
+}
+
+.skillSet-dark .clicked {
+    background-color:#504538;
+    color: whitesmoke;
+}
+
+.buttons {
+    display: flex;
+    align-items: flex-end;
+}
+
+.button:hover{
+    height: 2.5rem;
+}
+
+.skillsets p {
+    width: 90%;
+    height: 80px;
+    line-height: 2;
+    padding: 1rem 1rem;
+    margin: 0.2rem 0;
+    border: none;
+    border-radius: 1rem;
+}
+
+.skillSet-light p {
+    background-color: #F0ECE8;
+}
+
+.skillSet-dark p {
+    background-color: #6A6663;
+}
+
+@media screen and (max-width: 44rem){
+    .skillsets p {
+        width: 90%;
+        height: 120px;
+    }
+}

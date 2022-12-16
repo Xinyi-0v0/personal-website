@@ -1,0 +1,248 @@
+.project-experience {
+    display: grid;
+    grid-template-rows: auto 1fr;
+
+    max-width: 70rem;
+    min-width: 70%;
+    margin: 1rem 2rem;
+}
+
+.project-experience h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 1rem;
+}
+
+
+.projects .img-contanier {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 2.85/1;
+    border-radius: 10px;
+}
+
+.projects button {
+    border: none;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 0;
+
+    background-color: inherit;
+}
+
+.projects .btn-left {
+    justify-self: flex-end;
+}
+
+.projects .btn-rigth {
+    justify-self: flex-start;
+}
+
+.ligth-mode button:hover {
+    background-color: #ff896280;
+}
+
+
+.dark-mode button:hover {
+    background-color: #a2cac38e;
+}
+
+.projects .detail {
+    grid-area: 2/2/3/3;
+    place-self: flex-start center;
+
+    width: 25rem;
+    height: 10rem;
+    padding-left: 0.5rem;
+}
+
+.detail h3,
+p {
+    margin-top: 0;
+    width: 100%;
+}
+
+
+/*make all img in a same place, then change the ppstion of the pre one and the after one*/
+.img-contanier .project-img {
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    width: 60%;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.project-img img {
+    vertical-align: bottom;
+
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.project1 {
+    transform: translatex(-30%) scale(0.8);
+}
+
+.project3,
+.project4 {
+    transform: translatex(30%) scale(0.8);
+}
+
+.preCurr {
+    transform: translatex(-30%) scale(0.8);
+    opacity: 0.4;
+    z-index: 0;
+}
+
+.afterCurr {
+    transform: translatex(30%) scale(0.8);
+    opacity: 0.4;
+    z-index: 0;
+
+}
+
+.curr {
+    transform: translatex(0) scale(1);
+    opacity: 1;
+    z-index: 1;
+    box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47)
+}
+
+.hidden {
+    opacity: 0;
+}
+
+button[disabled] {
+    visibility: hidden;
+}
+
+
+
+/* below CSS adapted from https://css.gg under the MIT License */
+
+.gg-arrow-right {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs, 1.5));
+    width: 22px;
+    height: 22px
+}
+
+.gg-arrow-right::after,
+.gg-arrow-right::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    right: 6px
+}
+
+.gg-arrow-right::after {
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid;
+    border-right: 2px solid;
+    transform: rotate(45deg);
+    bottom: 7px
+}
+
+
+.gg-arrow-left {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs, 1.5));
+    width: 22px;
+    height: 22px
+}
+
+.gg-arrow-left::after,
+.gg-arrow-left::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    left: 6px
+}
+
+.gg-arrow-left::after {
+    width: 8px;
+    height: 8px;
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    transform: rotate(45deg);
+    bottom: 7px
+}
+
+.ligth-mode .gg-arrow-right,
+.ligth-mode .gg-arrow-left {
+    color: #595552;
+}
+
+.dark-mode .gg-arrow-right,
+.dark-mode .gg-arrow-left {
+    color: whitesmoke;
+}
+
+/* above CSS adapted from https://css.gg under the MIT License*/
+
+@media screen and (max-width: 72rem) {
+    .project-experience {
+        min-width: 90%;
+    }
+
+    .projects {
+        grid-template-columns: 1fr 10fr 1fr;
+        grid-template-rows: 1fr 2fr;
+    }
+
+    .gg-arrow-right,
+    .gg-arrow-left {
+        transform: scale(var(--ggs, 1));
+    }
+
+    .projects .img-contanier {
+        position: relative;
+
+        width: 100%;
+        aspect-ratio: 1.65/1;
+        overflow-x: hidden;
+    }
+
+    .img-contanier .project-img {
+        width: 100%;
+
+    }
+
+    .preHidden {
+        opacity: 0;
+        transform: translatex(50%);
+    }
+
+    .afterHidden {
+        opacity: 0;
+        transform: translatex(-50%);
+    }
+
+    .projects .detail {
+        width: 95%;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .img-contanier .project-img {
+        transform-style: preserve-3d;
+        transition: transform 0.4s ease-out;
+    }
+}
