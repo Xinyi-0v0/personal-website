@@ -1,19 +1,19 @@
 const menu = [
     {
         name: "About Me",
-        path: "/home.html",
+        path: "/",
     },
     {
         name: "Project Experience",
-        path: "/projects.html",
+        path: "/projects",
     },
     {
         name: "Work Experience",
-        path: "/work.html",
+        path: "/work",
     },
     {
         name: "Get In Touch",
-        path: "/contact.html"
+        path: "/contact"
 
     }
 ];

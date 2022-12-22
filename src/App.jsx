@@ -1,5 +1,5 @@
 import React,{useState, useRef} from 'react';
-
+import { NavigationProvider } from './components/context/Navigation';
 import Header from './components/Header';
 import Main from './components/Main';
 import Contact from './components/content/Contact';
@@ -12,30 +12,27 @@ import './App.css';
 
 function App() {
   const [lightkMode, setLightMode] = useState(true);
-  const [mainContent, setMainContent] = useState("/home.html");
   const modalRef = useRef(null);
 
-  function changeContent( event, path ) {
-    event.preventDefault();
-    if (path === "/contact.html") {
-        modalRef.current.showModal();
-    } else {
-      setMainContent(path);
-    }
+  function openModal() {
+    modalRef.current.showModal();
   }
+
 
   function changeMode() {
     setLightMode(curr => !curr);
   }
 
   return (
+    <NavigationProvider>
     <div className={lightkMode? "app app-lightMode" : "app app-darkMode"}>
       <Skiplink />
-      <Header isLight={lightkMode} content={mainContent} changeMode={changeMode} changeContent={changeContent}/>
-      <Main isLight={lightkMode} content={mainContent} />
+      <Header isLight={lightkMode} changeMode={changeMode} openModal={openModal}/>
+      <Main isLight={lightkMode}/>
       <Contact modalRef={modalRef} isLight={lightkMode}/>
       <Footer />
     </div>
+    </NavigationProvider>
   );
 }
 

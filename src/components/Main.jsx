@@ -2,15 +2,21 @@ import React from 'react';
 import Project from './content/Project';
 import SelfIntro from './content/SelfIntro';
 import Work from './content/Work';
-
+import Route from './Route';
 import './Main.css';
 
-function Main({content, isLight}) {
+function Main({isLight}) {
     return ( 
         <main id="main" className="main">
-            {content === "/home.html" && <SelfIntro isLight={isLight}/>}
-            {content === "/work.html" && <Work />}
-            {content === "/projects.html" && <Project isLight={isLight}/>}
+            <Route path={'/'}>
+                <SelfIntro isLight={isLight}/>
+            </Route>
+            <Route path={'/work'}>
+                <Work />
+            </Route>
+            <Route path={'/projects'}>
+                <Project isLight={isLight}/>
+            </Route>
         </main>
      );
 }

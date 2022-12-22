@@ -1,9 +1,10 @@
 import React from 'react';
 import menuData from '../data/navMenuData'
 import './Header.css';
+import Link from './Link';
 
 
-function Header({ isLight, content, changeMode, changeContent }) {
+function Header({ isLight, content, changeMode, openModal }) {
     const [isListShown, setIsListShown] = React.useState(false);
     const [isLargeSize, setIsLargeSize] = React.useState(window.innerWidth > 1152 ? true : false);
 
@@ -20,21 +21,15 @@ function Header({ isLight, content, changeMode, changeContent }) {
         window.addEventListener('resize', watchWidth);
     }, [])
 
-
-    function handleClick(e, str) {
-        changeContent(e, str);
-        setIsListShown(false);
-    }
-
-
-
     const list = menuData.map(item => {
+        let className = 'header-nav-link';
+        if(item.path === content) {className +='shown'};
+        const tabIndex = isLargeSize || isListShown ? "0" : "-1";
         return (
-            <li className="header-nav-item" key={item.name} onClick={(e) => handleClick(e, item.path)}>
-                <a href={item.path} className={`header-nav-link ${item.path === content ? 'shown':''}`} tabIndex={isLargeSize || isListShown ? "0" : "-1"} >
-                    {item.name}
-                </a>
-            </li>
+            <Link className={className} tabIndex={tabIndex} path={item.path} openModal={openModal} setIsListShown={setIsListShown}>
+                {item.name}
+            </Link>
+    
         );
     });
 
