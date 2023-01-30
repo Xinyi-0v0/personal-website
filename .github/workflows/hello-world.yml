@@ -10,6 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo
-        use: actions/checkout@v2
+        uses: actions/checkout@v2
       - name: echo the message
         run: echo "hello world!"
